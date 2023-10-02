@@ -24,3 +24,12 @@ function playRound(playerSelection, computerSelection) {
 		return "You lose! " + playerSelectionCapitalized + " loses to " + computerSelection;
 	}
 }
+
+function game() {
+	let playerScore = 0;
+	let computerScore = 0;
+	for (let i = 0; i < 5; i++) {
+		let playerChoice = prompt("Choose rock, paper, or scissors");
+		playRound(playerChoice, getComputerChoice());
+	}
+}
