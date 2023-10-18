@@ -24,16 +24,21 @@ function getComputerChoice() {
 	}
 }
 
+let playerScore = 0;
+let computerScore = 0;
+
+const resultsDiv = document.querySelector("#results");
+const playerChoices = document.querySelector("#player-choices");
+const playerScoreSpan = document.querySelector("#player-score");
+const computerScoreSpan = document.querySelector("#computer-score");
+
 function playRound(playerSelection, computerSelection) {
-	if (playerSelection !== "rock" && playerSelection !== "paper" && playerSelection !== "scissors") {
-		return "error";
-	}
+	playerChoices.textContent = `You chose ${playerSelection}, the computer chose ${computerSelection}`;
 	if (playerSelection === computerSelection) {
-		return "draw";
 	} else if (playerSelection === "rock" && computerSelection === "scissors" || playerSelection === "paper" && computerSelection === "rock" || playerSelection === "scissors" && computerSelection === "paper") {
-		return "win";
+		playerScoreSpan.textContent = ++playerScore;
 	} else {
-		return "loss";
+		computerScoreSpan.textContent = ++computerScore;
 	}
 }
 
