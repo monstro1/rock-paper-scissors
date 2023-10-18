@@ -1,3 +1,17 @@
+const rockButton = document.querySelector("#rock-btn");
+const paperButton = document.querySelector("#paper-btn");
+const scissorsButton = document.querySelector("#scissors-btn");
+
+rockButton.addEventListener("click", function() {
+	playRound("rock", getComputerChoice());
+});
+paperButton.addEventListener("click", function() {
+	playRound("paper", getComputerChoice());
+});
+scissorsButton.addEventListener("click", function() {
+	playRound("scissors", getComputerChoice());
+});
+
 function getComputerChoice() {
 	let num = Math.floor(Math.random() * 3) + 1;
 	switch(num) {
@@ -23,6 +37,7 @@ function playRound(playerSelection, computerSelection) {
 	}
 }
 
+/*
 function game() {
 	let playerScore = 0;
 	let computerScore = 0;
@@ -54,3 +69,4 @@ function game() {
 		return `You lose! The computer's score: ${computerScore}; your score: ${playerScore}.`;
 	}
 }
+*/
